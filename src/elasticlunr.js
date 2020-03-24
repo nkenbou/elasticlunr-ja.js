@@ -1610,10 +1610,22 @@ elasticlunr.Pipeline.registerFunction(elasticlunr.stemmer, 'stemmer');
  * @return {String}
  * @see elasticlunr.Pipeline
  */
+elasticlunr.generateStopWordFilter = function (stopWords) {
+  var words = stopWords.reduce(function (memo, stopWord) {
+    memo[stopWord] = stopWord;
+    return memo;
+  }, {});
+
+  return function (token) {
+    if (token && words[token.toString()] !== token.toString()) return token;
+    return null;
+  };
+};
 elasticlunr.stopWordFilter = function (token) {
   if (token && elasticlunr.stopWordFilter.stopWords[token] !== true) {
     return token;
   }
+  return null;
 };
 
 /**
