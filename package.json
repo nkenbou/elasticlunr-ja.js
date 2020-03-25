@@ -1,0 +1,23 @@
+{
+  "name": "elasticlunr-ja",
+  "title": "Elasticlunr.js for ja",
+  "description": "Elasticlunr.js for ja documents made by mdbook.",
+  "version": "0.0.1",
+  "author": "Kenichi Sone",
+  "main": "src/index.js",
+  "license": "MIT",
+  "private": true,
+  "keywords": [
+    "search",
+    "text retrieval",
+    "offline search",
+    "full text search"
+  ],
+  "scripts": {
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  }
+}
